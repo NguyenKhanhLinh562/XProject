@@ -7,7 +7,7 @@ class EmployeeService{
     }
     public function getAllEmloyees(){
         $conn = $this->getConn();
-        $sql = "SELECT * FROM employees";
+        $sql = "SELECT id , name , address , salary  FROM employees ORDER BY id DESC";
         $stmt = $conn->query($sql);
         $employees = [];
         while($row = $stmt->fetch()){
@@ -43,7 +43,7 @@ class EmployeeService{
     }
     public function create(Employee $employee){
         $conn = $this->getConn();
-        $sql = "INSERT INTO employee(id , name , address , salary) VALUES(null,?,?,?)";
+        $sql = "INSERT INTO employees(id , name , address , salary) VALUES(null,?,?,?)";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(1,$employee->getName());
         $stmt->bindValue(2,$employee->getAddress());
@@ -52,7 +52,7 @@ class EmployeeService{
     }
     public function update(Employee $employee){
         $conn = $this->getConn();
-        $sql = "UPDATE employee SET name = ? , address = ? , salary = ? WHERE id = ?";
+        $sql = "UPDATE employees SET name = ? , address = ? , salary = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(1,$employee->getName());
         $stmt->bindValue(2,$employee->getAddress());

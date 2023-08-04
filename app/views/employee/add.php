@@ -17,15 +17,15 @@
         <form action="<?= DOMAIN . "/public/index.php?action=store" ?>" method="post">
             <div class="mt-3">
                 <label for="">Name</label>
-                <input type="text" name="title" id="" class="form-control">
+                <input type="text" name="name" id="" class="form-control">
             </div>
             <div class="mt-3">
                 <label for="">Address</label>
-                <input type="text" name="summary" id="" class="form-control">
+                <input type="text" name="address" id="" class="form-control">
             </div>
             <div class="mt-3">
                 <label for="">Salary</label>
-                <input type="text" name="content" id="" class="form-control">
+                <input type="text" name="salary" id="" class="form-control">
             </div>
 
             <div class="mt-3">
