@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 04, 2023 lúc 12:20 PM
+-- Thời gian đã tạo: Th8 04, 2023 lúc 12:47 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.1.17
 
@@ -24,24 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `emloyees`
+-- Cấu trúc bảng cho bảng `employees`
 --
 
-CREATE TABLE `emloyees` (
-  `id` int(11) DEFAULT NULL,
-  `Name` varchar(50) DEFAULT NULL,
-  `Address` varchar(50) DEFAULT NULL,
-  `Salary` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `employees` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `salary` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `emloyees`
+-- Đang đổ dữ liệu cho bảng `employees`
 --
 
-INSERT INTO `emloyees` (`id`, `Name`, `Address`, `Salary`) VALUES
-(1, 'Dev ', 'Room 767', 5000),
-(2, 'Selene', 'Apt 1839', 7200),
-(3, 'Coleen ', 'Room 444', 4600);
+INSERT INTO `employees` (`id`, `name`, `address`, `salary`) VALUES
+(0, 'rsever0', '47 Schlimgen Plaza', 5282.00),
+(1, 'Nguyễn Văn A', 'Hanoi, Vietnam', 50000.00),
+(2, 'Trần Thị B', 'Ho Chi Minh City, Vietnam', 60000.50),
+(3, 'Lê Minh C', 'Da Nang, Vietnam', 45000.75),
+(4, 'Phạm Thế Duy', 'Hue, Vietnam', 55000.25),
+(5, 'Trần Văn E', 'Can Tho, Vietnam', 52000.00);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

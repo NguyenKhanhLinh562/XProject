@@ -43,7 +43,7 @@ class EmployeeService{
     }
     public function create(Employee $employee){
         $conn = $this->getConn();
-        $sql = "INSERT INTO employees(id , name , address , salary) VALUES(null,?,?,?)";
+        $sql = "INSERT INTO employees(id , name , address , salary) VALUES(?,?,?,?)";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(1,$employee->getName());
         $stmt->bindValue(2,$employee->getAddress());
